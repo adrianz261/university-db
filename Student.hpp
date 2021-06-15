@@ -21,6 +21,8 @@ class Student
             const std::array<uint8_t, 11> pesel);
     ~Student() = default;
 
+    static bool checkPesel(const std::array<uint8_t, 11>&);
+
     std::string getImie() const;
     std::string getNazwisko() const;
     std::string getAdres() const;

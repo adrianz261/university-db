@@ -6,11 +6,18 @@ Student::Student(const std::string& imie,
             const std::string& plec,
             const std::string& nr_indeksu,
             const std::array<uint8_t, 11> pesel)
-            : imie_(imie)
-            {
+            : imie_(imie),
+            nazwisko_(nazwisko),
+            adres_(adres),
+            plec_(plec),
+            nr_indeksu_(nr_indeksu),
+            pesel_(pesel)
+            { }
 
-            }
-
+    static bool checkPesel(const std::array<uint8_t, 11>&)
+    {
+        return false;
+    }
 
     std::string Student::getImie() const { return imie_; }
     std::string Student::getNazwisko() const { return nazwisko_; }
@@ -37,20 +44,32 @@ Student::Student(const std::string& imie,
 
     void Student::setAdres(const std::string& adres)
     {
-
+       if (!adres.empty())
+        {
+            adres_ = adres;
+        }
     }
 
     void Student::setPlec(const std::string& plec)
     {
-
+        if (!plec_.empty())
+        {
+            plec_ = plec;
+        }
     }
 
     void Student::setNrIndeksu(const std::string& nr_indeksu)
     {
-
+        if(!nr_indeksu_.empty())
+        {
+            nr_indeksu_ = nr_indeksu;
+        }
     }
 
     void Student::setPesel(const std::array<uint8_t, 11>& pesel)
     {
-
+        if (!pesel_.empty())
+        {
+            pesel_ = pesel;
+        }
     }
