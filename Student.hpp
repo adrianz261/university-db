@@ -23,4 +23,11 @@ class Student
 
     std::string getImie() const;
     std::string getNazwisko() const;
+    std::string getAdres() const;
+    std::string getPlec() const;
+    std::string getNrIndeksu() const;
+    const auto& getPesel() const;
+
+    void setImie(const std::string& imie);
+    void setNazwisko(const std::string& nazwisko);
 };
