@@ -30,4 +30,8 @@ class Student
 
     void setImie(const std::string& imie);
     void setNazwisko(const std::string& nazwisko);
+    void setAdres(const std::string& adres);
+    void setPlec(const std::string& plec);
+    void setNrIndeksu(const std::string& nr_indeksu);
+    void setPesel(const std::array<uint8_t, 11>& pesel);
 };
