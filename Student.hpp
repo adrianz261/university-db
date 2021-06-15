@@ -9,7 +9,7 @@ class Student
     std::string nazwisko_;
     std::string adres_;
     std::string plec_;
-    std::string nr_indeksu;
+    std::string nr_indeksu_;
     std::array<uint8_t, 11> pesel_;
 
     public:
