@@ -9,7 +9,7 @@ class Student
     std::string nazwisko_;
     std::string adres_;
     std::string plec_;
-    std::string nr_indeksu_;
+    unsigned long int nr_indeksu_;
     unsigned long int pesel_;
 
     public:
@@ -17,7 +17,7 @@ class Student
             const std::string& nazwisko,
             const std::string& adres,
             const std::string& plec,
-            const std::string& nr_indeksu,
+            const unsigned long int nr_indeksu,
             const unsigned long int pesel);
     ~Student() = default;
 
@@ -27,13 +27,13 @@ class Student
     std::string getNazwisko() const;
     std::string getAdres() const;
     std::string getPlec() const;
-    std::string getNrIndeksu() const;
+    unsigned long int getNrIndeksu() const;
     const auto& getPesel() const;
 
     void setImie(const std::string& imie);
     void setNazwisko(const std::string& nazwisko);
     void setAdres(const std::string& adres);
     void setPlec(const std::string& plec);
-    void setNrIndeksu(const std::string& nr_indeksu);
+    void setNrIndeksu(const unsigned long int nr_indeksu);
     void setPesel(const unsigned long int pesel);
 };

@@ -4,7 +4,7 @@ Student::Student(const std::string& imie,
             const std::string& nazwisko,
             const std::string& adres,
             const std::string& plec,
-            const std::string& nr_indeksu,
+            const unsigned long int nr_indeksu,
             const unsigned long int pesel)
             : imie_(imie),
             nazwisko_(nazwisko),
@@ -14,7 +14,7 @@ Student::Student(const std::string& imie,
             pesel_(pesel)
             { }
 
-    static bool checkPesel(const unsigned long int pesel)
+    bool Student::checkPesel(const unsigned long int pesel)
     {
         return false;
     }
@@ -23,7 +23,7 @@ Student::Student(const std::string& imie,
     std::string Student::getNazwisko() const { return nazwisko_; }
     std::string Student::getAdres() const { return adres_; }
     std::string Student::getPlec() const { return plec_; }
-    std::string Student::getNrIndeksu() const { return nr_indeksu_; }
+    unsigned long int Student::getNrIndeksu() const { return nr_indeksu_; }
     const auto& Student::getPesel() const{ return pesel_; }
 
     void Student::setImie(const std::string& imie)
@@ -58,9 +58,9 @@ Student::Student(const std::string& imie,
         }
     }
 
-    void Student::setNrIndeksu(const std::string& nr_indeksu)
+    void Student::setNrIndeksu(const unsigned long int nr_indeksu)
     {
-        if(!nr_indeksu_.empty())
+        if(nr_indeksu > 0)
         {
             nr_indeksu_ = nr_indeksu;
         }
@@ -68,7 +68,7 @@ Student::Student(const std::string& imie,
 
     void Student::setPesel(const unsigned long int pesel)
     {
-        if (checkPesel(pesel))
+        if (Student::checkPesel(pesel))
         {
             pesel_ = pesel;
         }
