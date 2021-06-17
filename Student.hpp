@@ -10,7 +10,7 @@ class Student
     std::string adres_;
     std::string plec_;
     std::string nr_indeksu_;
-    std::array<uint8_t, 11> pesel_;
+    unsigned long int pesel_;
 
     public:
     Student(const std::string& imie,
@@ -18,10 +18,10 @@ class Student
             const std::string& adres,
             const std::string& plec,
             const std::string& nr_indeksu,
-            const std::array<uint8_t, 11> pesel);
+            const unsigned long int pesel);
     ~Student() = default;
 
-    static bool checkPesel(const std::array<uint8_t, 11>&);
+    static bool checkPesel(const unsigned long int);
 
     std::string getImie() const;
     std::string getNazwisko() const;
@@ -35,5 +35,5 @@ class Student
     void setAdres(const std::string& adres);
     void setPlec(const std::string& plec);
     void setNrIndeksu(const std::string& nr_indeksu);
-    void setPesel(const std::array<uint8_t, 11>& pesel);
+    void setPesel(const unsigned long int pesel);
 };

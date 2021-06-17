@@ -5,7 +5,7 @@ Student::Student(const std::string& imie,
             const std::string& adres,
             const std::string& plec,
             const std::string& nr_indeksu,
-            const std::array<uint8_t, 11> pesel)
+            const unsigned long int pesel)
             : imie_(imie),
             nazwisko_(nazwisko),
             adres_(adres),
@@ -14,7 +14,7 @@ Student::Student(const std::string& imie,
             pesel_(pesel)
             { }
 
-    static bool checkPesel(const std::array<uint8_t, 11>&)
+    static bool checkPesel(const unsigned long int pesel)
     {
         return false;
     }
@@ -66,9 +66,9 @@ Student::Student(const std::string& imie,
         }
     }
 
-    void Student::setPesel(const std::array<uint8_t, 11>& pesel)
+    void Student::setPesel(const unsigned long int pesel)
     {
-        if (!pesel_.empty())
+        if (checkPesel(pesel))
         {
             pesel_ = pesel;
         }
