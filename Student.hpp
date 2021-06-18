@@ -5,35 +5,35 @@
 
 class Student
 {
-    std::string imie_;
-    std::string nazwisko_;
-    std::string adres_;
-    std::string plec_;
-    unsigned long int nr_indeksu_;
+    std::string name_;
+    std::string surname_;
+    std::string address_;
+    std::string gender_;
+    unsigned long int index_number_;
     unsigned long int pesel_;
 
     public:
-    Student(const std::string& imie,
-            const std::string& nazwisko,
-            const std::string& adres,
-            const std::string& plec,
-            const unsigned long int nr_indeksu,
+    Student(const std::string& name,
+            const std::string& surname,
+            const std::string& address,
+            const std::string& gender,
+            const unsigned long int index_number,
             const unsigned long int pesel);
     ~Student() = default;
 
     static bool checkPesel(const unsigned long int);
 
-    std::string getImie() const;
-    std::string getNazwisko() const;
-    std::string getAdres() const;
-    std::string getPlec() const;
-    unsigned long int getNrIndeksu() const;
+    std::string getName() const;
+    std::string getSurname() const;
+    std::string getAddress() const;
+    std::string getGender() const;
+    unsigned long int getIndexNumber() const;
     const auto& getPesel() const;
 
-    void setImie(const std::string& imie);
-    void setNazwisko(const std::string& nazwisko);
-    void setAdres(const std::string& adres);
-    void setPlec(const std::string& plec);
-    void setNrIndeksu(const unsigned long int nr_indeksu);
+    void setName(const std::string& name);
+    void setSurname(const std::string& surname);
+    void setAddress(const std::string& address);
+    void setGender(const std::string& gender);
+    void setIndexNumber(const unsigned long int index_number);
     void setPesel(const unsigned long int pesel);
 };

@@ -1,16 +1,16 @@
 #include "Student.hpp"
 
-Student::Student(const std::string& imie,
-            const std::string& nazwisko,
-            const std::string& adres,
-            const std::string& plec,
-            const unsigned long int nr_indeksu,
+Student::Student(const std::string& name,
+            const std::string& surname,
+            const std::string& address,
+            const std::string& gender,
+            const unsigned long int index_number,
             const unsigned long int pesel)
-            : imie_(imie),
-            nazwisko_(nazwisko),
-            adres_(adres),
-            plec_(plec),
-            nr_indeksu_(nr_indeksu),
+            : name_(name),
+            surname_(surname),
+            address_(address),
+            gender_(gender),
+            index_number_(index_number),
             pesel_(pesel)
             { }
 
@@ -19,50 +19,50 @@ Student::Student(const std::string& imie,
         return false;
     }
 
-    std::string Student::getImie() const { return imie_; }
-    std::string Student::getNazwisko() const { return nazwisko_; }
-    std::string Student::getAdres() const { return adres_; }
-    std::string Student::getPlec() const { return plec_; }
-    unsigned long int Student::getNrIndeksu() const { return nr_indeksu_; }
+    std::string Student::getName() const { return name_; }
+    std::string Student::getSurname() const { return surname_; }
+    std::string Student::getAddress() const { return address_; }
+    std::string Student::getGender() const { return gender_; }
+    unsigned long int Student::getIndexNumber() const { return index_number_; }
     const auto& Student::getPesel() const{ return pesel_; }
 
-    void Student::setImie(const std::string& imie)
+    void Student::setName(const std::string& name)
     {
-        if (!imie.empty())
+        if (!name.empty())
         {
-            imie_ = imie;
+            name_ = name;
         }
     }
 
-    void Student::setNazwisko(const std::string& nazwisko)
+    void Student::setSurname(const std::string& surname)
     {
-        if (!nazwisko.empty())
+        if (!surname.empty())
         {
-            nazwisko_ = nazwisko;
+            surname_ = surname;
         }
     }
 
-    void Student::setAdres(const std::string& adres)
+    void Student::setAddress(const std::string& address)
     {
-       if (!adres.empty())
+       if (!address.empty())
         {
-            adres_ = adres;
+            address_ = address;
         }
     }
 
-    void Student::setPlec(const std::string& plec)
+    void Student::setGender(const std::string& gender)
     {
-        if (!plec_.empty())
+        if (!gender_.empty())
         {
-            plec_ = plec;
+            gender_ = gender;
         }
     }
 
-    void Student::setNrIndeksu(const unsigned long int nr_indeksu)
+    void Student::setIndexNumber(const unsigned long int index_number)
     {
-        if(nr_indeksu > 0)
+        if(index_number > 0)
         {
-            nr_indeksu_ = nr_indeksu;
+            index_number_ = index_number;
         }
     }
 
