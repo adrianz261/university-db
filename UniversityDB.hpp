@@ -6,6 +6,11 @@
 
 class University
 {
-    std::vector<Student> student_list;
+    std::vector<Student> student_list_;
     
+    public:
+    University();
+    University(const std::vector<Student> student_list);
+
+    void printStudents() const;
 };
