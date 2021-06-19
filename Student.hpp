@@ -28,7 +28,7 @@ class Student
     std::string getAddress() const;
     std::string getGender() const;
     unsigned long int getIndexNumber() const;
-    const auto& getPesel() const;
+    unsigned long int getPesel() const;
 
     void setName(const std::string& name);
     void setSurname(const std::string& surname);

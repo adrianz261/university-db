@@ -11,11 +11,24 @@ University::University(const std::vector<Student> student_list)
 {
 }
 
+void University::addStudent(const Student& student)
+{
+    student_list_.push_back(student);
+}
+
 void University::printStudents() const
 {
-    std::cout << "*********************************";
+    std::cout << "*********************************\n";
     for (const auto& student : student_list_)
     {
-        std::cout << "* ";
+        std::cout << "* " << student.getName()
+                << ' ' << student.getSurname()
+                << ' ' << student.getSurname()
+                << ' ' << student.getAddress()
+                << ' ' << student.getIndexNumber()
+                << ' ' << student.getPesel()
+                << ' ' << student.getGender()
+                << " *\n";
     }
+    std::cout << "*********************************\n";
 }

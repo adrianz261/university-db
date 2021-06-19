@@ -24,7 +24,7 @@ Student::Student(const std::string& name,
     std::string Student::getAddress() const { return address_; }
     std::string Student::getGender() const { return gender_; }
     unsigned long int Student::getIndexNumber() const { return index_number_; }
-    const auto& Student::getPesel() const{ return pesel_; }
+    unsigned long int Student::getPesel() const{ return pesel_; }
 
     void Student::setName(const std::string& name)
     {

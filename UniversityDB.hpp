@@ -13,5 +13,6 @@ class University
     University(const std::vector<Student> student_list);
     ~University() = default;
 
+    void addStudent(const Student& student);
     void printStudents() const;
 };
