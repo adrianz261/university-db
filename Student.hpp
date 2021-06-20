@@ -18,10 +18,10 @@ class Student
             const std::string& address,
             const std::string& gender,
             const unsigned long int index_number,
-            const unsigned long int pesel);
+            const unsigned long long int pesel);
     ~Student() = default;
 
-    static bool checkPesel(const unsigned long int);
+    static bool checkPesel(const unsigned long long int);
 
     std::string getName() const;
     std::string getSurname() const;
