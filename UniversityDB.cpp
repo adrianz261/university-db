@@ -17,10 +17,11 @@ void University::addStudent(const Student& student)
     student_list_.push_back(student);
 }
 
-auto University::searchBySurname(const std::string& surname)
+Student University::searchBySurname(const std::string& surname)
 {
-    return std::find(student_list_.cbegin(), student_list_.cend(),
-                        [surname](const Student& s) { return (s.getSurname() == surname) ? true : false; });
+    return *std::find_if(student_list_.cbegin(), student_list_.cend(),
+                        [surname](const auto& s)
+                        { return s.getSurname() == surname; });
 }
 
 void University::printStudents() const
