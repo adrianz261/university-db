@@ -14,5 +14,6 @@ class University
     ~University() = default;
 
     void addStudent(const Student& student);
+    auto searchBySurname(const std::string& surname);
     void printStudents() const;
 };
