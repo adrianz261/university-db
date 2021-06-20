@@ -31,7 +31,6 @@ void University::printStudents() const
     {
         std::cout << "* " << student.getName()
                 << " | " << student.getSurname()
-                << " | " << student.getSurname()
                 << " | " << student.getAddress()
                 << " | " << student.getIndexNumber()
                 << " | " << student.getPesel()
