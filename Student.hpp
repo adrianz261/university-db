@@ -10,7 +10,7 @@ class Student
     std::string address_;
     std::string gender_;
     unsigned long int index_number_;
-    unsigned long int pesel_;
+    std::string pesel_;
 
     public:
     Student(const std::string& name,
@@ -18,22 +18,22 @@ class Student
             const std::string& address,
             const std::string& gender,
             const unsigned long int index_number,
-            const unsigned long long int pesel);
+            const std::string& pesel);
     ~Student() = default;
 
-    static bool checkPesel(const unsigned long long int);
+    static bool checkPesel(const std::string&);
 
     std::string getName() const;
     std::string getSurname() const;
     std::string getAddress() const;
     std::string getGender() const;
     unsigned long int getIndexNumber() const;
-    unsigned long int getPesel() const;
+    std::string getPesel() const;
 
     void setName(const std::string& name);
     void setSurname(const std::string& surname);
     void setAddress(const std::string& address);
     void setGender(const std::string& gender);
     void setIndexNumber(const unsigned long int index_number);
-    void setPesel(const unsigned long int pesel);
+    void setPesel(const std::string& pesel);
 };

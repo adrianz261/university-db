@@ -5,7 +5,7 @@ Student::Student(const std::string& name,
             const std::string& address,
             const std::string& gender,
             const unsigned long int index_number,
-            const unsigned long long int pesel)
+            const std::string& pesel)
             : name_(name),
             surname_(surname),
             address_(address),
@@ -14,7 +14,7 @@ Student::Student(const std::string& name,
             pesel_(pesel)
             { }
 
-    bool Student::checkPesel(const unsigned long long int pesel)
+    bool Student::checkPesel(const std::string& pesel)
     {
         return false;
     }
@@ -24,7 +24,7 @@ Student::Student(const std::string& name,
     std::string Student::getAddress() const { return address_; }
     std::string Student::getGender() const { return gender_; }
     unsigned long int Student::getIndexNumber() const { return index_number_; }
-    unsigned long int Student::getPesel() const{ return pesel_; }
+    std::string Student::getPesel() const { return pesel_; }
 
     void Student::setName(const std::string& name)
     {
@@ -66,7 +66,7 @@ Student::Student(const std::string& name,
         }
     }
 
-    void Student::setPesel(const unsigned long int pesel)
+    void Student::setPesel(const std::string& pesel)
     {
         if (Student::checkPesel(pesel))
         {

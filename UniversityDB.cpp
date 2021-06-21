@@ -24,6 +24,15 @@ Student University::searchBySurname(const std::string& surname)
                         { return s.getSurname() == surname; });
 }
 
+Student University::searchByPesel(const std::string& pesel)
+{
+    return *std::find_if(student_list_.cbegin(), student_list_.cend(),
+                    [pesel](const Student& s)
+                    {
+                        return s.getPesel() == pesel;
+                    });
+}
+
 void University::printStudents() const
 {
     std::cout << "*********************************\n";
@@ -33,7 +42,6 @@ void University::printStudents() const
                 << " | " << student.getSurname()
                 << " | " << student.getAddress()
                 << " | " << student.getIndexNumber()
-                << " | " << student.getPesel()
                 << " | " << student.getGender()
                 << " *\n";
     }
