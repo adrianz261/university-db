@@ -33,6 +33,26 @@ Student University::searchByPesel(const std::string& pesel)
                     });
 }
 
+void University::sortByPesel()
+{
+    std::sort(student_list_.begin(), student_list_.end(),
+                [](const Student& lhs, const Student& rhs)
+                {
+                    const std::string& lhs_pesel = lhs.getPesel();
+                    const std::string& rhs_pesel = rhs.getPesel();
+
+                    for (size_t i = 0; i < 11; ++i)
+                    {
+                        //std::cerr << i << ". " << lhs_pesel[i] << " | " << rhs_pesel[i] << '\n';
+                        if (lhs_pesel[i] > rhs_pesel[i])
+                        {
+                            return true;
+                        }
+                    }
+                    return false;
+                });
+}
+
 void University::printStudents() const
 {
     std::cout << "*********************************\n";
