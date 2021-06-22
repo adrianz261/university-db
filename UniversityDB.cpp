@@ -53,6 +53,12 @@ void University::sortByPesel()
                 });
 }
 
+void University::sortBySurname()
+{
+    std::sort(student_list_.begin(), student_list_.end(),
+                [](const Student& lhs, const Student& rhs) { return lhs.getSurname() > rhs.getSurname(); });
+}
+
 void University::printStudents() const
 {
     std::cout << "*********************************\n";

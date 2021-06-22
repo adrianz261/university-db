@@ -22,13 +22,11 @@ int main()
 
     std::cout << "Przed sortowaniem:\n";
     univ.printStudents();
-    univ.sortByPesel();
+    univ.sortBySurname();
 
     std::cout << "Po sortowaniu:\n";
     univ.printStudents();
 
-    std::cout << "PESEL 55030101230 (poprawny): " << Student::checkPesel("55030101230") << '\n';
-    std::cout << "PESEL 55030101231 (niepoprawny): " << Student::checkPesel("55030101231") << '\n';
 
     return 0;
 }

@@ -17,5 +17,6 @@ class University
     Student searchBySurname(const std::string& surname);
     Student searchByPesel(const std::string& pesel);
     void sortByPesel();
+    void sortBySurname();
     void printStudents() const;
 };
