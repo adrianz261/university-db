@@ -16,6 +16,14 @@ Student::Student(const std::string& name,
 
     bool Student::checkPesel(const std::string& pesel)
     {
+        const unsigned int month = 10 * (pesel[2] - '0') + (pesel[3] - '0');
+        const unsigned int day = 10 * (pesel[4] - '0') + (pesel[5] - '0');
+
+        if (month == 0 || month > 12 || day == 0 || day > 31)
+        {
+            return false;
+        }
+
         const std::array<int, 11> w = {1, 3, 7, 9, 1, 3, 7, 9, 1, 3, 1};
         int s = 0;
 
