@@ -59,6 +59,19 @@ void University::sortBySurname()
                 [](const Student& lhs, const Student& rhs) { return lhs.getSurname() > rhs.getSurname(); });
 }
 
+bool University::removeStudent(const unsigned long int index_number)
+{
+    auto it = std::remove_if(student_list_.begin(), student_list_.end(),
+                    [index_number](const Student& s) { return s.getIndexNumber() == index_number; });
+    if (it == student_list_.end())
+    {
+        return false;
+    }
+
+    student_list_.erase(it, student_list_.end());
+    return true;
+}
+
 void University::printStudents() const
 {
     std::cout << "*********************************\n";

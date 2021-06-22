@@ -18,5 +18,6 @@ class University
     Student searchByPesel(const std::string& pesel);
     void sortByPesel();
     void sortBySurname();
+    bool removeStudent(const unsigned long int index_number);
     void printStudents() const;
 };
