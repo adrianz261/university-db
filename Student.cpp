@@ -16,7 +16,14 @@ Student::Student(const std::string& name,
 
     bool Student::checkPesel(const std::string& pesel)
     {
-        return false;
+        const std::array<int, 11> w = {1, 3, 7, 9, 1, 3, 7, 9, 1, 3, 1};
+        int s = 0;
+
+        for (size_t i = 0; i < 11; ++i)
+        {
+            s += w[i] * static_cast<int>(pesel[i] - 0x30);
+        }
+        return !(s % 10);
     }
 
     std::string Student::getName() const { return name_; }

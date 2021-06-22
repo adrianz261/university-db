@@ -6,7 +6,7 @@ int main()
     University univ;
     Student student1("Jan", "Kowalski", "ul. Brzozowa 12, Olsztyn", "M", 207333u, "89652365559");
     Student student2("Jan", "Nowak", "ul. Brzozowa 13, Olsztyn", "M", 208333u, "92852365559");
-    Student student3("Adam", "Ryba", "ul. Brzozowa 14, Bydgoszcz", "M", 107333u, "90652365559");
+    Student student3("Adam", "Ryba", "ul. Brzozowa 14, Bydgoszcz", "M", 107333u, "55030101230");
     Student student4("Katarzyna", "Ryba", "ul. Brzozowa 14, Bydgoszcz", "M", 107333u, "91652365559");
     Student student5("Zbigniew", "Golonka", "ul. Brzozowa 14, Bydgoszcz", "M", 107333u, "80652365559");
 
@@ -26,6 +26,9 @@ int main()
 
     std::cout << "Po sortowaniu:\n";
     univ.printStudents();
+
+    std::cout << "PESEL 55030101230 (poprawny): " << Student::checkPesel("55030101230") << '\n';
+    std::cout << "PESEL 55030101231 (niepoprawny): " << Student::checkPesel("55030101231") << '\n';
 
     return 0;
 }
