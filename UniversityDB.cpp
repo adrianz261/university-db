@@ -44,7 +44,7 @@ void University::sortByPesel()
                     for (size_t i = 0; i < 11; ++i)
                     {
                         //std::cerr << i << ". " << lhs_pesel[i] << " | " << rhs_pesel[i] << '\n';
-                        if (lhs_pesel[i] > rhs_pesel[i])
+                        if (lhs_pesel[i] < rhs_pesel[i])
                         {
                             return true;
                         }
@@ -56,7 +56,7 @@ void University::sortByPesel()
 void University::sortBySurname()
 {
     std::sort(student_list_.begin(), student_list_.end(),
-                [](const Student& lhs, const Student& rhs) { return lhs.getSurname() > rhs.getSurname(); });
+                [](const Student& lhs, const Student& rhs) { return lhs.getSurname() < rhs.getSurname(); });
 }
 
 bool University::removeStudent(const unsigned long int index_number)
@@ -74,7 +74,7 @@ bool University::removeStudent(const unsigned long int index_number)
 
 void University::printStudents() const
 {
-    std::cout << "*********************************\n";
+    std::cout << "*********************************************\n";
     for (const auto& student : student_list_)
     {
         std::cout << "* " << student.getName()
@@ -82,7 +82,8 @@ void University::printStudents() const
                 << " | " << student.getAddress()
                 << " | " << student.getIndexNumber()
                 << " | " << student.getGender()
+                << " | " << student.getPesel()
                 << " *\n";
     }
-    std::cout << "*********************************\n";
+    std::cout << "**********************************************\n";
 }

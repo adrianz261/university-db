@@ -14,8 +14,12 @@ Student::Student(const std::string& name,
             pesel_(pesel)
             { }
 
-    bool Student::checkPesel(const std::string& pesel)
+bool Student::checkPesel(const std::string& pesel)
     {
+        if (pesel.size() != 11)
+        {
+            return false;
+        }
         const unsigned int month = 10 * (pesel[2] - '0') + (pesel[3] - '0');
         const unsigned int day = 10 * (pesel[4] - '0') + (pesel[5] - '0');
 
@@ -34,57 +38,57 @@ Student::Student(const std::string& name,
         return !(s % 10);
     }
 
-    std::string Student::getName() const { return name_; }
-    std::string Student::getSurname() const { return surname_; }
-    std::string Student::getAddress() const { return address_; }
-    std::string Student::getGender() const { return gender_; }
-    unsigned long int Student::getIndexNumber() const { return index_number_; }
-    std::string Student::getPesel() const { return pesel_; }
+std::string Student::getName() const { return name_; }
+std::string Student::getSurname() const { return surname_; }
+std::string Student::getAddress() const { return address_; }
+std::string Student::getGender() const { return gender_; }
+unsigned long int Student::getIndexNumber() const { return index_number_; }
+std::string Student::getPesel() const { return pesel_; }
 
-    void Student::setName(const std::string& name)
+void Student::setName(const std::string& name)
+{
+    if (!name.empty())
     {
-        if (!name.empty())
-        {
-            name_ = name;
-        }
+        name_ = name;
     }
+}
 
-    void Student::setSurname(const std::string& surname)
+void Student::setSurname(const std::string& surname)
+{
+    if (!surname.empty())
     {
-        if (!surname.empty())
-        {
-            surname_ = surname;
-        }
+        surname_ = surname;
     }
+}
 
-    void Student::setAddress(const std::string& address)
+void Student::setAddress(const std::string& address)
+{
+    if (!address.empty())
     {
-       if (!address.empty())
-        {
-            address_ = address;
-        }
+        address_ = address;
     }
+}
 
-    void Student::setGender(const std::string& gender)
+void Student::setGender(const std::string& gender)
+{
+    if (!gender_.empty())
     {
-        if (!gender_.empty())
-        {
-            gender_ = gender;
-        }
+        gender_ = gender;
     }
+}
 
-    void Student::setIndexNumber(const unsigned long int index_number)
+void Student::setIndexNumber(const unsigned long int index_number)
+{
+    if(index_number > 0)
     {
-        if(index_number > 0)
-        {
-            index_number_ = index_number;
-        }
+        index_number_ = index_number;
     }
+}
 
-    void Student::setPesel(const std::string& pesel)
+void Student::setPesel(const std::string& pesel)
+{
+    if (Student::checkPesel(pesel))
     {
-        if (Student::checkPesel(pesel))
-        {
-            pesel_ = pesel;
-        }
+        pesel_ = pesel;
     }
+}
